@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("#datepicker").datepicker();
+    });
+    </script>
+
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#home">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Services 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="Hair.html">Hair</a>
+      <a href="Beauty.html">Beauty</a>
+      <a href="#">Hair and Beauty</a>
+    </div>
+  </div> 
+</div>
+
+<form action="Hair.html" method="post">
+  <h1>Hair Services</h1>
+  
+  <fieldset>
+    <legend><span class="number">1</span> Service information</legend>
+
+<select id="service" name="service_name">
+    <option value="hair_services">Services</option>
+    <option value="Wash and Blowdry">Wash and Blowdry</option>
+    <option value="Wash, Cut and Blowdry">Wash, cut and Blowdry</option>
+    <option value="Curly Blowdry">Curly Blowdry</option>
+    <option value="Straight Blowdry">Straight Blowdry</option>
+    <option value="Cut and Colour">Cut and Colour</option>
+    <option value="Fullhead Highlights">Fullhead Highlight</option>
+    <option value="Half Head Highlights"> Half Head Highlights</option>
+    <option value="UpStyle">UpStyle</option>
+    <option value="Bridal Hair">Bridal Hair</option>
+</select>
+<br/>
+
+    <input type="text" id="Postcode" name="postcode" placeholder="Postcode">
+
+    <div class="slidecontainer">
+      <p>Distance Picker</p>
+  <input type="range" min="1" max="20" value="10" class="slider" id="myRange">
+    </div>  
+  </fieldset>
+  
+  <fieldset> 
+    <legend><span class="number">2</span> Date and Time Picker</legend>
+
+    <input id="datepicker" name="Date" placeholder="Select a Date">
+   </fieldset>
+
+  <button type="submit">Search</button>
+</form>
+
+</body>
+</html>

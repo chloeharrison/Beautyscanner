@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>   
+    
+<script>
+    var images = new Array(14);  
+    images[0] = "img/hair1.jpg";
+    images[1] = "img/hair2.jpg";
+    images[2] = "img/hair3.jpg";
+    images[3] = "img/hair4.jpg";
+    images[4] = "img/hair5.jpg";
+    images[5] = "img/hair6.jpg";
+    images[6] = "img/hair7.jpg";
+    images[7] = "img/hair8.jpg";
+    images[8] = "img/hair9.jpg";
+    images[9] = "img/hair10.jpg";
+    images[10] = "img/nails1.png";
+    images[11] = "img/nails.png";
+    images[12] = "img/nails2.png";
+    images[13] = "img/nails3.png";
+    images[14] = "img/nails4.png";
+
+    var numimg = 14;
+    var fstimg = 1;
+
+  function  goback() {
+    var im=document.getElementById("image");
+    if(fstimg>0)
+   {
+    im.src = images[fstimg-1];
+    fstimg = fstimg - 1;
+   }else{
+    alert("You have reached the first image!");
+   }
+
+
+}
+
+function gofwd(){
+var im=document.getElementById("image");
+    if(fstimg < numimg){
+    im.src = images[fstimg+1];
+    fstimg = fstimg + 1;
+   }else{
+      alert("You have reached the last image!");
+      }
+
+
+}
+
+</script>
+
+    
+</head>
+
+<body>
+	<div style="margin-left: 10%; margin-right: 10%; height: 500px;">
+<img src="img/hair1.jpg" alt="1" height="500" width="500" id="image" />
+</div>
+<br>
+<input type="button" value="PREVIOUS" id="prev" name="prev" onclick="goback();" >
+
+<input type="button" value="NEXT" id="next" name="next" onclick="gofwd();" >
+</body>
+</html>
